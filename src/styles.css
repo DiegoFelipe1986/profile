@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+.welcome{
+    text-align: center;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #e30a33!important;
+    border-color: #e30a33!important;
+}
