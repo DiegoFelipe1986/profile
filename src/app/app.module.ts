@@ -5,22 +5,31 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainComponent } from './components/main/main.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule} from "@angular/common/http";
+import { HttpClientModule} from '@angular/common/http';
+
+// Routes
+import { APP_ROUTING } from './app.routes';
+
 //Import services
 import { CodeService } from './services/code.service';
+import { CodeComponent } from './components/code/code.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    
+
     NavbarComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    CodeComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    APP_ROUTING
   ],
   providers: [CodeService],
   bootstrap: [AppComponent]

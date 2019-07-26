@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="" style="margin-top: 30px;">
+        <form action="">
+            <div class="row">
+                <div class="col-md-2 center">
+                    <img src="../../../assets/img/user/perfil.png" class="rounded-circle" width="100"  alt="">
+                </div>
+                <div class="col-md-10">
+                    <h3>Perfil del Usuario</h3>
+                    <p>Modifica la informaciòn personal de tu perfil </p>
+                </div>
+            </div>
+            <hr>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-md-6">
+                    <div class="form-group" >
+                        <label for="exampleInputEmail1">Nombres</label>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" class="form-control" name="name" id="name" [(ngModel)]="name"  placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group" >
+                        <label for="exampleInputEmail1">Apellidos</label>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" class="form-control" name="lastName" id="lastName" [(ngModel)]="lastName"  placeholder="Tu Apellido">
+                    </div>
+                    <div class="form-group" >
+                        <label for="exampleInputEmail1">Correo</label>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="email" class="form-control" name="lastName" id="lastName" [(ngModel)]="email"  placeholder="Correo registrado">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group" >
+                        <label for="exampleInputEmail1">Nueva contraseña</label>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="password" class="form-control" name="name" id="name" [(ngModel)]="newPass"  placeholder="Nueva Contraseña">
+                    </div>
+                    <div class="form-group" >
+                        <label for="exampleInputEmail1">Confirmar Nueva contraseña</label>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="password" class="form-control" name="lastName" id="lastName" [(ngModel)]="confNewPass"  placeholder="Confirma nueva contraseña">
+                    </div>
+                </div>
+
+            </div>
+            <hr>
+            <h3>Notificaciones</h3>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Mensajes de texto</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Correo electrónico</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Notificaciones por la aplicación</label>
+            </div>
+            <hr>
+            <button type="submit" class="btn btn-primary">Guardar información</button>
+        </form>
+    </div>
+</div>
