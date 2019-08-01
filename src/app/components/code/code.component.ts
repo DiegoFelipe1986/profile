@@ -13,7 +13,7 @@ export class CodeComponent implements OnInit {
   }
 
   validateCode(){
-    console.log(this.code);
+    
   }
 
 }

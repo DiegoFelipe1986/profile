@@ -9,14 +9,13 @@ import { Observable } from 'rxjs';
 export class CodeService {
 
   constructor(private http: HttpClient) { 
-    console.log('ola khe ase?');
+    console.log('desde code');
   }
 
   signIn(mobile: string){
     
     let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-    
-    return this.http.get(`https://muydev.com/api/users/defaulttoken?id=9203`, {headers});
+    return this.http.post(`https://muydev.com/api/users/defaulttoken?id=9203`, {headers});
 
   }
 
