@@ -13,14 +13,20 @@
                             </div>
                             <input type="tel" class="form-control" name="mobile" id="mobile" [(ngModel)]="mobile" maxlength="10" placeholder="Ej: 3107654321">
                         </div>                
-                        
+ 
                         <small id="emailHelp" class="form-text text-muted">A tu celular llegará un código que deberás ingresar para validar e <br> ingresar a modificar tu pérfil</small>
                     </div>
-
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" id="enviar" class="btn btn-primary">Enviar</button>
+                    <div *ngIf="loading" class="justify-content-center" style="margin-top:30px;">
+                        <img src="../../../assets/img/loader/loading.gif" class="img-fluid" width="50px;" alt="">
+                    </div>
                 </div>
             </div>
 
         </form>
+    </div>
+
+    <div *ngIf="mensajeError" class="alert alert-danger animated fadeIn d-flex justify-content-center" style="margin-top:30px;">
+        <p><b>{{ mensajeError }}</b></p>
     </div>
 </div>

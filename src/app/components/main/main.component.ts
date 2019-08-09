@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {CodeService} from '../../services/code.service';
-import { LoginService } from 'src/app/services/login.service';
+import {environment} from 'src/environments/environment';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-main',
@@ -8,29 +12,30 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent  {
-
+  accessToken: string;
   mobile: string;
-
-  constructor(public code :CodeService, public login :LoginService) { }
+  access: boolean;
+  errorServicio: boolean;
+  mensajeError: string;
+  urlBase = environment.urlBase;
+  loading: boolean;
+  constructor(public code :CodeService,  public router: Router, private http: HttpClient) { }
 
   ngOnInit() {
-    let client_id = 2;
-    let client_secret = 'l3wXmCHALVR9qyiPVlWuE33DDipPL1Ax7I3ItTOK';
 
-    this.login.logIn().subscribe( (data: any) => {
-        
-      console.log(data);
-      
-    });
   }
 
   send(){
-    
-      this.code.signIn(this.mobile).subscribe( (data: any) => {
-        
-        console.log(data);
-        
-      });
+    this.loading = true;
+    this.code.signIn(this.mobile).subscribe((data:any) =>{
+      if(data.status = 201){
+        this.router.navigate(['code']);
+      }
+    }, (errorServicio) =>{
+      this.loading = false;
+      this.errorServicio = true;
+      this.mensajeError = errorServicio.error.result.messages;
+    } );
   }
     
 }

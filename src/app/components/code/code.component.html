@@ -11,8 +11,15 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-barcode"></i></span>
                             </div>
-                            <input type="tel" class="form-control" name="code" id="code" [(ngModel)]="code" maxlength="6" style="text-transform: uppercase;"  placeholder="Código: XD34SD">
-                        </div>                
+                            <input type="text" class="form-control" name="codeValidation" id="code" [(ngModel)]="codeValidation" maxlength="6" style="text-transform: uppercase;"  placeholder="Código: XD34SD">
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-phone"></i></span>
+                            </div>
+                            <input type="tel" class="form-control" name="phone" id="phone" [(ngModel)]="phone" maxlength="10" placeholder="Ej: 3107654321">
+                        </div>           
                         
                         <small id="emailHelp" class="form-text text-muted">A tu celular llegará un código que deberás ingresar para validar e <br> ingresar a modificar tu pérfil</small>
 

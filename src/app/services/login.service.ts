@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {environment} from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
+
+  urlBase = environment.urlBase;
 
   constructor(private http: HttpClient) {
     
@@ -15,11 +17,11 @@ export class LoginService {
     let headers = new HttpHeaders().set('Content-Type','application/json');
 
     let body = {
-      client_id: 2,
-      client_secret : "l3wXmCHALVR9qyiPVlWuE33DDipPL1Ax7I3ItTOK"
+      client_id: environment.client_id,
+      client_secret : environment.client_secret
     }
     
-    return this.http.post(`https://muy-gt.serveo.net/api/v1/login-aplications`, {body} , {headers});
+    return this.http.post(`${this.urlBase}api/v1/login-aplications`, body , {headers});
   }
 
 }

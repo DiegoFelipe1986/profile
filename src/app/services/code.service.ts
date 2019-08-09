@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {environment} from 'src/environments/environment';
 
 
 @Injectable({
@@ -8,15 +8,38 @@ import { Observable } from 'rxjs';
 })
 export class CodeService {
 
+  urlBase = environment.urlBase;
+  mobile: string;
+  code: string;
+  codeValidation: string;
+  phone: string;
+  
   constructor(private http: HttpClient) { 
-    console.log('desde code');
+    
   }
 
   signIn(mobile: string){
-    
-    let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-    return this.http.post(`https://muydev.com/api/users/defaulttoken?id=9203`, {headers});
+   
+    const auth = localStorage.getItem('access_token');
 
+    const headers = new HttpHeaders({
+      Authorization: auth
+    });
+    
+    
+    return this.http.get(`${this.urlBase}api/v1/users/generate/${mobile}/code`, {headers});
+ 
+  }
+
+  validate(codeValidation: string, phone: string){
+  
+   phone = phone.toUpperCase();
+   console.log(codeValidation, phone);
+    
+    let options = {
+      mobile: phone
+    }
+    return this.http.get(`${this.urlBase}api/v1/users/validate/${codeValidation}/code` )
   }
 
 }

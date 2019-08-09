@@ -14,6 +14,7 @@ import { APP_ROUTING } from './app.routes';
 import { CodeService } from './services/code.service';
 import { CodeComponent } from './components/code/code.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     FooterComponent,
     MainComponent,
     CodeComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

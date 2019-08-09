@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  //urlBase:"https://muy-gt.serveo.net/",
+  urlBase:"https://api.100.24.124.63.xip.moss.sh/",
+  client_id:1,
+  //client_secret : "l3wXmCHALVR9qyiPVlWuE33DDipPL1Ax7I3ItTOK"
+  client_secret : "OhD3z8tC8EEo8eNGxTMlPKEACD6Q1ucLXb6FSf1N"
 };
 
 /*
