@@ -23,7 +23,7 @@ export class LoadingComponent implements OnInit {
   getToken(){
     
     this.login.logIn().subscribe( (data: any) => {
-      console.log(data);
+
       if (data.code == 200){
         this.access = true;
         this.accessToken = data.result.token.toString();
